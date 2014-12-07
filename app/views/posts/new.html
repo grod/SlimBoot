@@ -1,0 +1,25 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1 class="page-header">New post</h1>
+
+    <form action="/posts" method="POST">
+      <div class="form-group">
+        <input type="text" class="form-control" name="title" placeholder="Title">
+      </div>
+      <div class="form-group">
+        <textarea type="text" rows="10" class="form-control" name="body" placeholder="Post body"></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+
+    </form>
+
+  </div>
+
+{% endblock %}
+

@@ -1,0 +1,16 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1 class="page-header">{{post.title}} <small>{{post.created}}</small></h1>
+    <p>{{post.body | nl2br}}</p>
+    <hr/>
+
+    <a href="/posts/delete/{{post.id}}" class="btn btn-xs btn-danger">Delete post</a>
+    <a href="/posts/edit/{{post.id}}" class="btn btn-xs btn-primary">Edit post</a>
+
+  </div>
+
+{% endblock %}
+

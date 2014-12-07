@@ -1,0 +1,47 @@
+{
+  "name": "grod/SlimBoot",
+	"description": "Application Bootstrapping with Slim, RedBean and Twig",
+	"license": "MIT",
+  "authors": [
+    {
+      "name": "Gustav Buchholtz",
+      "email": "gustav@grod.se",
+      "homepage": "http://www.grod.se",
+      "role": "Developer"
+    }
+  ],
+
+  "config": {
+    "vendor-dir": "vendor"
+  },
+
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "redbeanphp",
+        "version": "master",
+        "dist": {
+          "url": "http://www.redbeanphp.com/downloadredbean.php",
+          "type": "tar"
+        }
+      }
+    }
+  ],
+
+  "require": {
+    "twig/twig": "~1.0",
+    "slim/slim": "2.*",
+    "slim/views": "0.1.*",
+    "redbeanphp": "master"
+  },
+
+  "autoload": {
+    "files": [
+      "vendor/redbeanphp/rb.php"
+    ]
+	},
+
+  "minimum-stability": "dev"
+
+}

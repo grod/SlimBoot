@@ -1,0 +1,19 @@
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <h1 class="page-header">Posts</h1>
+    {% for post in posts %}
+      <h4>{{post.title}} <small>{{post.created}}</small></h4>
+      <p>{{post.body | nl2br}}</p>
+      <a href="/posts/{{post.id}}">Show post &raquo;</a>
+      <hr/>
+    {% endfor %}
+
+    <a href="/posts/new" class="btn btn-primary">Create new post</a>
+
+  </div>
+
+
+{% endblock %}
