@@ -1,4 +1,6 @@
-<?php
+<?php namespace SlimBoot\Controllers;
+
+use R;
 
 class PostsController extends ApplicationController {
 

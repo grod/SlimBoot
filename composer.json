@@ -39,7 +39,10 @@
   "autoload": {
     "files": [
       "vendor/redbeanphp/rb.php"
-    ]
+    ],
+    "psr-4": {
+      "SlimBoot\\": "app/"
+    }
 	},
 
   "minimum-stability": "dev"

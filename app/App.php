@@ -1,6 +1,5 @@
-<?php
+<?php namespace SlimBoot;
 
-require __DIR__ . '/controllers/ApplicationController.php';
 
 class App extends \Slim\Slim {
 
@@ -13,22 +12,21 @@ class App extends \Slim\Slim {
   // Return instance of controller
   function controller( $controller = 'application' ) {
 
-    // Controller already instantiated?
-    $instance = array_search($controller, $this->controllers);
+    // Check if controller already is instantiated.
+    if (!array_key_exists($controller, $this->controllers)) {
 
-    // If not, do it now
-    if (!$instance) {
-      $class_name = ucfirst($controller).'Controller';
-      $file_name = __DIR__.'/controllers/'.$class_name.'.php';
-
-      require_once $file_name;
-      
-      $instance = new $class_name($this);
-      $this->controllers[ $controller ] = $instance;
+      // Prepend controller namespace and append Controller to the name.
+      // Now it's all ready for PSR-4, which is awesome.
+      $class_name = __NAMESPACE__ . '\\Controllers\\' . ucfirst($controller).'Controller';
+      if (class_exists($class_name)) {
+        $this->controllers[$controller] = new $class_name($this);
+      } else {
+        // Class not found. Return null
+        return null;
+      }
     }
 
-    return $instance;
-
+    return $this->controllers[$controller];
   }
 
 }
