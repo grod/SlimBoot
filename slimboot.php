@@ -3,7 +3,6 @@
 // Composer autoload
 require __DIR__ . '/vendor/autoload.php';
 
-require __DIR__ . '/app/App.php';
 
 // Init Twig template engine
 Twig_Autoloader::register();
@@ -26,7 +25,7 @@ $config = [
 ];
 
 // App instance
-$app = new App($config);
+$app = new SlimBoot\App($config);
 
 // Global config file
 if (is_file($app->config('conf_global'))) {

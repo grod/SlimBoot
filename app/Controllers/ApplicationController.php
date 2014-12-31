@@ -1,4 +1,4 @@
-<?php
+<?php namespace SlimBoot\Controllers;
 
 class ApplicationController {
 

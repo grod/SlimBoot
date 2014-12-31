@@ -26,6 +26,10 @@ $ curl -sS https://getcomposer.org/installer | php
 $ php composer.phar install
 $ npm install
 ```
+Make sure your web server user can read the RedBean package:
+```
+$ chmod +r vendor/redbeanphp/*
+```
 You then build the project with ```$ gulp```
 
 ## Coding convention
